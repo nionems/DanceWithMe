@@ -124,7 +124,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="My app" headernav={nav} />
+      <Header title=" Dance Sydney" headernav={nav} />
       <Routes>
         <Route path="/" element={<Home listData={ data } />} />
         <Route path="/about" element={<About />} />
