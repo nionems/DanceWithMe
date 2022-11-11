@@ -92,7 +92,7 @@ export function Signup(props) {
           <div className="d-grid">
             <button
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-danger"
               disabled={(validEmail && validPassword) ? false : true}
             >
               Sign up

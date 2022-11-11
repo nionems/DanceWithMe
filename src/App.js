@@ -1,4 +1,7 @@
 import { useState, useEffect } from 'react'
+//import image from "./public/BackgroundImage Large.png"; 
+
+//import background from "./img/placeholder.png";
 import './App.css';
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
@@ -10,6 +13,7 @@ import { About } from './pages/About'
 import { Signup } from './pages/Signup'
 import { Signout } from './pages/Signout'
 import { Signin } from './pages/Signin'
+import { MyAccount } from './pages/MyAccount'
 
 // import firebase
 import { initializeApp } from "firebase/app"
@@ -44,11 +48,19 @@ const signup = (email, password) => {
     createUserWithEmailAndPassword(FBauth, email, password)
       .then((userCredential) => resolve(userCredential.user))
       .catch((error) => {
-        // console.log(error)
+         console.log(error)
         reject(error)
       })
   })
 }
+
+
+//Website Style 
+
+document.body.style = 'background: grey;';
+//import myLogo from './BlackLogo.png';
+
+
 
 const signin = (email, password ) => {
   return new Promise( ( resolve, reject ) => {
@@ -72,24 +84,30 @@ const NavData = [
   { name: "About", path: "/about", public: true },
   { name: "Contact", path: "/contact", public: true },
   { name: "Sign Up", path: "/signup", public: true },
-  { name: "Sign in", path: "/signin", public: true }
+  { name: "Sign in", path: "/signin", public: true },
+  { name: "My Account", path: "/myaccount", public: false }
+
 ]
 
 const NavDataAuth = [
   { name: "Home", path: "/", public: true },
   { name: "About", path: "/about", public: true },
   { name: "Contact", path: "/contact", public: true },
-  { name: "Sign out", path: "/signout", public: true }
+  { name: "Sign out", path: "/signout", public: true },
+  { name: "My Account", path: "/myaccount", public: true }
 ]
 
+
+
 function App() {
+
   const [auth, setAuth] = useState()
   const [nav, setNav] = useState(NavData)
   const [ data, setData ] = useState([])
 
   useEffect( () => {
     if( data.length == 0 ) {
-      setData( getDataCollection('books') )
+      setData( getDataCollection('events') )
     }
   }, [data] )
 
@@ -117,7 +135,9 @@ function App() {
       item.id = doc.id
       dbItems.push( item )
     })
-    return dbItems
+    setData(dbItems)
+    console.log (dbItems)
+    //return dbItems
   }
 
   
@@ -125,6 +145,7 @@ function App() {
   return (
     <div className="App">
       <Header title=" Dance Sydney" headernav={nav} />
+      
       <Routes>
         <Route path="/" element={<Home listData={ data } />} />
         <Route path="/about" element={<About />} />
@@ -132,6 +153,8 @@ function App() {
         <Route path="/signup" element={<Signup handler={signup} />} />
         <Route path="/signout" element={<Signout handler={signoutuser} auth={auth} />} />
         <Route path="/signin" element={<Signin handler={signin} />} />
+        <Route path="/myaccount" element={<MyAccount handler={myaccount} />} />
+
       </Routes>
       <Footer year="2022" />
     </div>

@@ -1,5 +1,21 @@
 import { Navigation } from "./Navigation"
 import { Link } from "react-router-dom"
+//import './App.css';
+import React from 'react';
+
+
+
+
+function App() {
+    const isBackgroundRed = true;
+    
+    return (
+      <div className={isBackgroundRed ? 'background-red' : 'background-blue'} />
+    );
+  }
+
+
+
 
 export function Header(props) {
     return (
@@ -13,3 +29,4 @@ export function Header(props) {
         </header>
     )
 }
+
