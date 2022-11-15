@@ -18,7 +18,7 @@ export function Home(props) {
         <div className="col-md-4">
           <h1 style={{ color: "white" }}>Contact Us </h1>
           <h1  style={{ color: "white" }}>Tonight at the argyle </h1>
-                     <p>jLorem Ipsum is simply dummy text of the printing andre like Aldus PageMaker including versions of Lorem Ipsum.
+                     <p style = {{ color:"white"}}>jLorem Ipsum is simply dummy text of the printing andre like Aldus PageMaker including versions of Lorem Ipsum.
                     </p>
 
 

@@ -6,9 +6,17 @@
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
   background-image: url(/public/BackgroundImage\ Large.png);
+  background-size: cover;
   font-weight:bold;
+
+
+  
 
   
 
 }
 
+.logo{
+  min-width: 100px;
+  max-width: 150px;
+}

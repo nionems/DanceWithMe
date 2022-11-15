@@ -153,8 +153,9 @@ function App() {
   
 
   return (
-    <div className="App">
-      <Header title=" Dance Sydney" headernav={nav} />
+    <div className="App text-white">
+      
+      <Header headernav={nav} />
       
       <Routes>
         <Route path="/" element={<Home listData={ data } />} />

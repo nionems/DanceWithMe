@@ -1,5 +1,6 @@
 import React from 'react'
-const ContactForm = () => {
+
+export const ContactForm = () => {
   const [formStatus, setFormStatus] = React.useState('Send')
   const onSubmit = (e) => {
     e.preventDefault()
@@ -14,7 +15,7 @@ const ContactForm = () => {
   }
   return (
     <div className="container mt-5">
-      <h2 className="mb-3">React Contact Form Component Example</h2>
+      <h2 className="mb-3">Please let us know how to improve</h2>
       <form onSubmit={onSubmit}>
         <div className="mb-3">
           <label className="form-label" htmlFor="name">

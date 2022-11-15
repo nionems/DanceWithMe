@@ -1,3 +1,4 @@
+import {ContactForm} from '../components/ContactForm'
 export function Contact(props) {
     return (
 
@@ -7,13 +8,13 @@ export function Contact(props) {
 
                 <div className="col text-center">
 
-                    {/* <div className="App">
+                    <div className="App">
                         <ContactForm />
-                    </div> */}
+                    </div>
 
                     <h1 style={{ color: "white" }}>Contact Us </h1>
-                    <h2>Here is where you can chat with us !!!</h2>
-                    <p>jdhdfjhfjhdfhdfhdhfdkhfkdfhdukfheukfhdkufhdkfhdkfhjkfdhjfkdehfjkhfjkdfhjkdfhdjkfhkdjfhjkdhfdkjf
+                    <h2 style = {{ color:"white"}}>Here is where you can chat with us !!!</h2>
+                    <p style = {{ color:"white"}}>jdhdfjhfjhdfhdfhdhfdkhfkdfhdukfheukfhdkufhdkfhdkfhjkfdhjfkdehfjkhfjkdfhjkdfhdjkfhkdjfhjkdhfdkjf
                         dehdfejkdhfejkdhejhefjkehfejkfhjekfhejkfhefjkehfejkfhejkfhejkfhejfhejke
                     </p>
 
