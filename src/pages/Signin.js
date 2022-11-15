@@ -33,7 +33,7 @@ export function Signin(props) {
       <div className="row">
       
         <form className="col-md-4 offset-md-4" onSubmit={submitHandler} >
-          <h2>Please Sign in to your account</h2>
+          <h2 style={{ color: "white" }} >Please Sign in to your account</h2>
           <div className="mb-3">
             <label htmlFor="useremail">Email </label>
             <input

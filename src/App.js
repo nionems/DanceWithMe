@@ -53,7 +53,16 @@ const signup = (email, password) => {
       })
   })
 }
-
+const myaccount = (email, password) => {
+  return new Promise((resolve, reject) => {
+    createUserWithEmailAndPassword(FBauth, email, password)
+      .then((userCredential) => resolve(userCredential.user))
+      .catch((error) => {
+         console.log(error)
+        reject(error)
+      })
+  })
+}
 
 //Website Style 
 
@@ -85,7 +94,7 @@ const NavData = [
   { name: "Contact", path: "/contact", public: true },
   { name: "Sign Up", path: "/signup", public: true },
   { name: "Sign in", path: "/signin", public: true },
-  { name: "My Account", path: "/myaccount", public: false }
+  
 
 ]
 
@@ -135,10 +144,11 @@ function App() {
       item.id = doc.id
       dbItems.push( item )
     })
-    setData(dbItems)
-    console.log (dbItems)
-    //return dbItems
+    setData( dbItems )
+    console.log( dbItems )
+    // return dbItems
   }
+
 
   
 
@@ -153,7 +163,7 @@ function App() {
         <Route path="/signup" element={<Signup handler={signup} />} />
         <Route path="/signout" element={<Signout handler={signoutuser} auth={auth} />} />
         <Route path="/signin" element={<Signin handler={signin} />} />
-        <Route path="/myaccount" element={<MyAccount handler={myaccount} />} />
+        <Route path="/myaccount" element={<MyAccount handler={myaccount} auth={auth} />} />
 
       </Routes>
       <Footer year="2022" />
