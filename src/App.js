@@ -14,6 +14,8 @@ import { Signup } from './pages/Signup'
 import { Signout } from './pages/Signout'
 import { Signin } from './pages/Signin'
 import { MyAccount } from './pages/MyAccount'
+import { MyList } from './pages/MyList'
+
 
 // import firebase
 import { initializeApp } from "firebase/app"
@@ -64,6 +66,17 @@ const myaccount = (email, password) => {
   })
 }
 
+const mylist = (email, password) => {
+  return new Promise((resolve, reject) => {
+    createUserWithEmailAndPassword(FBauth, email, password)
+      .then((userCredential) => resolve(userCredential.user))
+      .catch((error) => {
+         console.log(error)
+        reject(error)
+      })
+  })
+}
+
 //Website Style 
 
 document.body.style = 'background: grey;';
@@ -103,7 +116,8 @@ const NavDataAuth = [
   { name: "About", path: "/about", public: true },
   { name: "Contact", path: "/contact", public: true },
   { name: "Sign out", path: "/signout", public: true },
-  { name: "My Account", path: "/myaccount", public: true }
+  { name: "My Account", path: "/myaccount", public: true },
+  { name: "My List", path: "/mylist", public: true }
 ]
 
 
@@ -165,6 +179,7 @@ function App() {
         <Route path="/signout" element={<Signout handler={signoutuser} auth={auth} />} />
         <Route path="/signin" element={<Signin handler={signin} />} />
         <Route path="/myaccount" element={<MyAccount handler={myaccount} auth={auth} />} />
+        <Route path="/mylist" element={<MyList handler={mylist} auth={auth} />} />
 
       </Routes>
       <Footer year="2022" />
