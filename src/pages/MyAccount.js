@@ -10,6 +10,8 @@ export function MyAccount( props ) {
         }
     }, [props.auth])
 
+    
+
 
 
     // const MyFavourite = () => {
@@ -25,6 +27,8 @@ export function MyAccount( props ) {
     // export default MyFavourite;
 
     return(
+        
+        
         <div className= "My Account">
              <div className="col text-center">
 

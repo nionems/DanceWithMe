@@ -10,7 +10,10 @@ export function MyList( props ) {
         }
     }, [props.auth])
     return(
+
+        
         <div className= "My List">
+            
              <div className="col text-center">
 
           

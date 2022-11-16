@@ -15,21 +15,21 @@ export const ContactForm = () => {
   }
   return (
     <div className="container mt-5">
-      <h2 className="mb-3">Please let us know how to improve</h2>
+      <h2 className="mb-5">Please let us know how to improve our Website</h2>
       <form onSubmit={onSubmit}>
-        <div className="mb-3">
+        <div className="mb-5">
           <label className="form-label" htmlFor="name">
             Name
           </label>
           <input className="form-control" type="text" id="name" required />
         </div>
-        <div className="mb-3">
+        <div className="mb-5">
           <label className="form-label" htmlFor="email">
             Email
           </label>
           <input className="form-control" type="email" id="email" required />
         </div>
-        <div className="mb-3">
+        <div className="mb-5">
           <label className="form-label" htmlFor="message">
             Message
           </label>

@@ -1,6 +1,6 @@
 import { Navigation } from "./Navigation"
 import { Link } from "react-router-dom"
-import Logo from '../BlackLogo.png'
+import Logo from '../WhiteLogo-01.png'
 
 export function Header(props) {
     return (
