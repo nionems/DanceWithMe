@@ -13,8 +13,10 @@ export function Home(props) {
       return (
 
 
-
         
+
+
+
         <div className="col-md-4">
           <h1 style={{ color: "white" }}>Contact Us </h1>
           <h1  style={{ color: "white" }}>Tonight at the argyle </h1>
@@ -25,10 +27,10 @@ export function Home(props) {
 
           <div className="card">
             <div className="card-body">
-            <h5 className="card-title">{item.event_starttime}</h5>
-            <h5 className="card-title">{item.event_poster}</h5>
-            <h5 className="card-title">{item.event_location}</h5>
-            <h5 className="card-title">{item.event_}</h5>
+            <h5 style={{ color: "black" }} className="card-title">{item.event_starttime}</h5>
+            <h5 style={{ color: "black" }} className="card-title">{item.event_poster}</h5>
+            <h5 style={{ color: "black" }} className="card-title">{item.event_location}</h5>
+             <h5 className="card-title">{item.event_}</h5>
          
               
 
