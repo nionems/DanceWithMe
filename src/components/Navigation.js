@@ -16,7 +16,7 @@ export function Navigation ( props ) {
         // NavigationLinks collection return html code for each item in the array
         const NavigationLinks = navItems.map( ( item, itemKey ) => {
             return(
-                <NavLink to={item.path} className="nav-link text-white" key={itemKey} >{ item.name }</NavLink>
+                <NavLink to={item.path} className="nav-link text-white " key={itemKey} >{ item.name }</NavLink>
             )
         })
 

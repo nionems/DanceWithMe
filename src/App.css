@@ -31,3 +31,16 @@
   max-width: 350px;
 
 }
+.Image{
+  min-width: 100px;
+  max-width: 350px;
+
+
+}
+.Detail{
+  font-variant: red;
+  
+}
+.Link{
+  color: rgb(236, 32, 32);
+}
