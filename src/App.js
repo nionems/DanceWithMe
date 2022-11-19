@@ -180,7 +180,7 @@ function App() {
       .catch((error)=> reject(error))
     })
   }
-  const getDocument = async (FBdb , col,id ) => {
+  const getDocument = async (col,id ) => {
     const docRef = doc( FBdb, col, id )
     const docData = await getDoc(docRef)
     if( docData.exists() ){
@@ -189,18 +189,11 @@ function App() {
     else{
       return null
     }
-
-
   }
-
-
-  
 
   return (
     <div className="App text-white">
-      
       <Header headernav={nav} />
-      
       <Routes>
         <Route path="/" element={<Home listData={ data } imageGetter= {getImageURL} />} />
         <Route path="/about" element={<About />} />
