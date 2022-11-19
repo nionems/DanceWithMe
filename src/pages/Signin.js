@@ -4,12 +4,12 @@ import { useNavigate, Link } from "react-router-dom"
 export function Signin(props) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [success,setSuccess] = useState(false)
+  const [success, setSuccess] = useState(false)
 
   const navigate = useNavigate()
 
-  useEffect( () => {
-    if( success ) { navigate('/') }
+  useEffect(() => {
+    if (success) { navigate('/') }
   })
 
   const submitHandler = (event) => {
@@ -17,22 +17,22 @@ export function Signin(props) {
     // stop the form from refreshing the page
     event.preventDefault()
     // reset error message
-   
+
     // capture data from form
     const data = new FormData(event.target)
     props.handler(data.get("useremail"), data.get("userpw"))
-      .then(() => setSuccess(true) )
+      .then(() => setSuccess(true))
       .catch((error) => {
         //console.log(error)
-      
+
       })
   }
 
   return (
     <div className="container">
       <div className="row">
-      
-        <form className="col-md-6 offset-md-4" onSubmit={submitHandler} >
+
+        <form className="col-md-4 offset-md-4" onSubmit={submitHandler} >
           <h2 style={{ color: "white" }} >Please Sign in to your account</h2>
           <div className="mb-3">
             <label htmlFor="useremail">Email </label>
@@ -62,9 +62,9 @@ export function Signin(props) {
               type="submit"
               className="btn btn-danger"
             >
-             Sign in
+              Sign in
             </button>
-            
+
           </div>
         </form>
       </div>

@@ -209,7 +209,7 @@ function App() {
         <Route path="/signout" element={<Signout handler={signoutuser} auth={auth} />} />
         <Route path="/signin" element={<Signin handler={signin} />} />
         <Route path="/myaccount" element={<MyAccount handler={myaccount} auth={auth} />} />
-        <Route path="/mylist" element={<MyList handler={mylist} auth={auth} />} />
+        <Route path="/mylist" element={<MyList handler={mylist} auth={auth} listData={ data } imageGetter= {getImageURL}  />} />
         <Route path="/events/:eventID" element={<Detail getter={getDocument} />} />
         
 

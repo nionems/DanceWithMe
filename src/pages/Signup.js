@@ -63,7 +63,7 @@ export function Signup(props) {
   return (
     <div className="container">
       <div className="row">
-        <form className="col-md-6 offset-md-4" onSubmit={submitHandler}>
+        <form className="col-md-4 offset-md-4" onSubmit={submitHandler}>
           <h2 style={{ color: "white" }}>Sign up for an account</h2>
           <div className="mb-3">
             < label htmlFor="useremail">Email (valid email address) </label>

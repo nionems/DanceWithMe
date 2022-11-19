@@ -24,12 +24,9 @@ export function About(props) {
             {/* <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --> */}
             <div class="row m-5">
                 <div class="col-6 col-md-4">
-
                 </div>
                 <div class="col-6 col-md-4"><img className='logo' src={Logo} /></div>
-
             </div>
-
             {/* <!-- Columns are always 50% wide, on mobile and desktop --> */}
             <div class="row m-5">
                 <div class="col-6 "> <img className='logo' src={PhotoLio} /></div>

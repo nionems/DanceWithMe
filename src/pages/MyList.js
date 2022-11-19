@@ -1,81 +1,86 @@
-import { useEffect } from 'react'
+
+import { useState, useEffect } from 'react'
 import { useNavigate, Link } from "react-router-dom"
 import Logo from '../WhiteLogo-01.png'
+import Kizomba1 from '../Kizomba1.jpg'
 
-export function MyList( props ) {
+export function MyList(props) {
     const navigate = useNavigate()
+    const [pageData, setPageData] = useState([])
 
-    useEffect( () => {
-        if( props.auth ) {
-            props.handler().then( (res) => navigate('/') )
+    useEffect(() => {
+        if (props.auth) {
+            props.handler().then((res) => navigate('/'))
         }
     }, [props.auth])
-    return(
 
-        
-        <div className= "My List">
-            
-            <div className="container text-center">
+    useEffect(() => {
+        console.log(props.listData)
+        setPageData(props.listData)
+    }, [props.listData])
 
-{/* <div class="row-1"> <img className='logo' src={PhotoLio} /></div> */}
+    if (pageData.length > 0) {
+        const itemCollection = pageData.map((item, key) => {
+            return (
 
-
-{/* <!-- Stack the columns on mobile by making one full-width and the other half-width --> */}
-<div className="row m-5 ">
-    <div className="col-md-8"></div>
-    <h1>My List of Favourite</h1>
-    
-</div>
-
-{/* <!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop --> */}
-<div class="row m-5">
-   
-<div class="p-3 mb-2 bg-danger text-white"> Your list
-
-</div>
-    <div class="p-3 mb-2 bg-dark text-white">
-    <div class="col-6 "> <img className='logo' src={Logo} /></div>
-        
-    </div>
-    <div class="p-3 mb-2 bg-dark text-white">
-    <div class="col-6 "> <img className='logo' src={Logo} /></div>
+                <div className="col-md-3">
 
 
-    </div>
-    <div class="p-3 mb-2 bg-dark text-white">
-    <div class="col-6 "> <img className='logo' src={Logo} /></div>
-    
-    </div>
-    <div class="p-3 mb-2 bg-dark text-dark">
-    <div class="col-6 "> <img className='logo' src={Logo} /></div>
+                    <Image urlgetter={props.imageGetter} imgPath={"eventPicture/" + item.event_poster} />
+                    <div className="card">
+                        {/* <img src="" className="card-img-top" alt={item.event_title}></img> */}
+                        <div className="card-body text-center bg-secondary">
+
+                            <h3 style={{ color: "black" }} className="card-title">{item.event_title}</h3>
+                            <h5 style={{ color: "black" }} className="card-title">{item.event_day}</h5>
+                            <h6 style={{ color: "black" }} className="card-title">{item.event_starttime}</h6>
+                            <h3 style={{ color: "gold" }} className="card-title">{item.event_price}</h3>
 
 
-    </div>
-    <div class="p-3 mb-2 bg-dark text-white">
-    <div class="col-6 "> <img className='logo' src={Logo} /></div>
-    dhfjkdhfkdjhfkdjsfhkfhjksd
-    jdjdhcshcidjcidjcicjdijdijc
-    kchjkdchlchjkdchjlchildcihc
-    
-    </div>
-    <div class="col-6 col-md-4-bg-dark class">
-  
-
-    </div>
-    {/* <div class="col-6 col-md-4"><img className='logo' src={Logo} /></div> */}
-
-</div>
-
-{/* <!-- Columns are always 50% wide, on mobile and desktop --> */}
-<div class="row m-5">
-    
-</div>
-
-</div>
-        </div>
+                            <Link to={"/events/" + item.id} >Detail</Link>
+                        </div>
+                    </div>
+                </div>
+            )
+        })
 
 
+        return (
+            <div className="Home">
+                <div className="container">
+                    <div className="row">
+                        {itemCollection}
+                    </div>
+                </div>
+            </div>
+        )
+    }
+    else {
+        return null
+    }
+}
 
 
-    )
+function Image(props) {
+    const [imageURL, setImageURL] = useState()
+
+    useEffect(() => {
+        if (!imageURL) {
+            props.urlgetter(props.imgPath)
+                .then((url) => setImageURL(url))
+                .catch((error) => console.log(error))
+        }
+    })
+    if (imageURL) {
+        return (
+            <img src={imageURL} className="card-img-top" alt={props.Title} />
+        )
+    }
+    else {
+        return (
+            <div class="spinner-border" role="status">
+                <span class="sr-only"></span>
+            </div>
+        )
+    }
 }

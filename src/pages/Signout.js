@@ -3,9 +3,9 @@ import { useEffect } from 'react'
 export function Signout(props) {
     const navigate = useNavigate()
 
-    useEffect( () => {
-        if( props.auth ) {
-            props.handler().then( (res) => navigate('/') )
+    useEffect(() => {
+        if (props.auth) {
+            props.handler().then((res) => navigate('/'))
         }
     }, [props.auth])
 
