@@ -7,7 +7,7 @@ export function About(props) {
     return (
 
         <div className="container text-center">
-            <h3>About Us</h3>
+            <h3> About Us </h3>
             <div class="col-center "> <img className='AboutUsPic' src={AboutUsPic} /></div>
             <div className="row m-5 ">
                 <div className="col-md-8"></div>
@@ -34,7 +34,6 @@ export function About(props) {
             </div>
 
         </div>
-
 
     )
 }

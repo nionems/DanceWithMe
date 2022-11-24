@@ -31,8 +31,8 @@ export function Signup(props) {
     }
   }, [password])
 
-  useEffect( () => {
-    if(success) {
+  useEffect(() => {
+    if (success) {
       navigate('/')
     }
   }, [success])

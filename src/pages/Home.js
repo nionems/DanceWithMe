@@ -44,8 +44,6 @@ export function Home(props) {
     return null
   }
 }
-
-
 function Image(props) {
   const [imageURL, setImageURL] = useState()
 

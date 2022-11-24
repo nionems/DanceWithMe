@@ -30,15 +30,8 @@ export function MyAccount(props) {
 
     return (
 
-
         <div className="My Account">
             <div className="container text-center">
-
-
-
-
-
-
                 <h1 style={{ color: "white" }}>My Account</h1>
                 <div class="p-3 mb-2 bg-dark text-white">
 
@@ -48,9 +41,6 @@ export function MyAccount(props) {
                             <i class="fa fa-coffee"></i>
                             Here you can <strong>edit or delete</strong>  your profile and account
                         </div>
-
-
-
                     </div>
                     <h1>Lionel Coevoet</h1>
                     <div class="container">
