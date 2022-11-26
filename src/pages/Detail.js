@@ -55,7 +55,7 @@ export function Detail(props) {
                     <h5>description</h5>
                     <p>{eventData.event_description}</p>
                     <div style={(props.auth) ? { display: "block" } : { display: "none" }}>
-                        {/* <button className="btn btn-info">Add to Favourites</button> */}
+                        <button className="btn btn-info">Add to Favourites</button>
                         <form method="post" onSubmit={ reviewSubmitHandler}>
                             <label className="form-label">
                                 <h5>Write a review for {eventData.event_title}</h5>
@@ -90,7 +90,7 @@ function DetailImage(props) {
 
   useEffect(() => {
       if (props.data) {
-          props.getter("events_event_poster/" + props.data.Cover)
+          props.getter("eventPicture/" + props.data.event_poster)
               .then((url) => setImgUrl(url))
       }
   }, [props.data])
