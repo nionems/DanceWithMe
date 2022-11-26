@@ -8,6 +8,10 @@ export function Signup(props) {
   const [validPassword, setValidPassword] = useState(false)
   const [error, setError] = useState()
   const [success, setSuccess] = useState(false)
+  const [dob, setDob] = useState('')
+  const [occupation, setOccupation] = useState('')
+  const [validOccupation, setValidOccupation] = useState(false)
+  const [validDob, setValidDob] = useState(false)
 
   const navigate = useNavigate();
 
@@ -23,13 +27,31 @@ export function Signup(props) {
   }, [email])
 
   useEffect(() => {
-    if (password.length >= 8) {
+    if (password.length >= 6) {
       setValidPassword(true)
     }
     else {
       setValidPassword(false)
     }
   }, [password])
+
+  useEffect(() => {
+    if(dob.length >= 8) {
+      setValidDob( true )
+    }
+    else {
+      setValidDob(false)
+    }
+  }, [dob])
+
+  useEffect(() => {
+    if(occupation.length >= 4) {
+      setValidOccupation( true )
+    }
+    else {
+      setValidOccupation(false)
+    }
+  }, [occupation])
 
   useEffect(() => {
     if (success) {
@@ -45,7 +67,7 @@ export function Signup(props) {
     setError(null)
     // capture data from form
     const data = new FormData(event.target)
-    props.handler(data.get("useremail"), data.get("userpw"))
+    props.handler(data.get("useremail"), data.get("userpw"), data.get("userdob"), data.get("useroccupation"))
       .then(() => setSuccess(true))
       .catch((error) => {
         //console.log(error)
@@ -83,10 +105,34 @@ export function Signup(props) {
               type="password"
               id="userpw"
               name="userpw"
-              placeholder="you@domain.com"
+              placeholder="**********"
               className="form-control"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="userdob"> Date of birth --/--/-- </label>
+            <input
+              type="dob"
+              id="userdob"
+              name="userdob"
+              placeholder="--/--/--"
+              className="form-control"
+              value={dob}
+              onChange={(event) => setDob(event.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="useroccupation">Occupation</label>
+            <input
+              type="occupation"
+              id="useroccupation"
+              name="useroccupation"
+              placeholder="Student, IT, Hospitalilty..."
+              className="form-control"
+              value={occupation}
+              onChange={(event) => setOccupation(event.target.value)}
             />
           </div>
           <div className="d-grid">
