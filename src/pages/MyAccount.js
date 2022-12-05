@@ -2,21 +2,7 @@ import { useEffect } from 'react'
 import { useNavigate, Link } from "react-router-dom"
 import PhotoLio from '../lionel.JPG'
 import Logo from '../WhiteLogo-01.png'
-import { getAuth } from "firebase/auth";
 
-const auth = getAuth();
-const user = auth.currentUser;
-
-if (user !== null) {
-    user.providerData.forEach((users) => {
-      console.log("Sign-in provider: " + users.providerId);
-      console.log("  Provider-specific UID: " + users.uid);
-      console.log("  Name: " + users.displayName);
-      console.log("  Email: " + users.email);
-      console.log("  Occupation: " + users.occupation);
-      console.log("  Photo URL: " + users.photoURL);
-    });
-  }
   
 
 

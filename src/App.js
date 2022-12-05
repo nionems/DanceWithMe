@@ -79,6 +79,7 @@ function App() {
   const [nav, setNav] = useState(NavData)
   const [data, setData] = useState([])
   const [userData, setUserData] = useState()
+  const [eventReviews, setEventReviews] = useState([])
 
   useEffect(() => {
     if (data.length == 0) {
@@ -210,9 +211,9 @@ function App() {
       return null
     }
   }
-  const addEventReview = async (eventID, reviewText, userId) => {
+  const addEventReviews = async (eventID, reviewText, userId) => {
     const path = "events/" + eventID + "/events"
-    const reviewObj = { EventID: eventID, User: userId, Text: reviewText }
+    const reviewObj = { EventID: eventID, UserId: userId, Text: reviewText, Date:new Date() }
     const reviewRef = await addDoc(collection(FBdb, path), reviewObj)
     if (reviewRef.id) {
       return true
@@ -223,14 +224,28 @@ function App() {
   }
 
   const getEventReviews = async (eventID) => {
-    const collectionStr = "events/" + eventID + "/events"
+    const collectionStr = "events/" + eventID + "/reviews"
     const reviewsQuery = query(collection(FBdb, collectionStr,))
     const unsubscribe = onSnapshot(reviewsQuery, (reviewsSnapshot) => {
       let reviews = []
       reviewsSnapshot.forEach((review) => {
+        let reviewData = review.data()
+        // create a js date object from firebase
+        let dateData = reviewData.Date.toDate()
+        // get the year month and date
+        let year = dateData.getFullYear()
+        let month = dateData.getMonth() + 1
+        let date = dateData.getDate()
+        let hours = dateData.getHours()
+        let minutes = dateData.getMinutes()
+        // construct as a string
+        let dateStr = `${date}/${month}/${year} ${hours}:${minutes}`
+
+        reviewData.Date = dateStr
+
         reviews.push(review.data())
       })
-      return reviews
+      setEventReviews (reviews)
     })
   }
 
@@ -253,8 +268,9 @@ function App() {
             getter={getDocument}
             auth={auth}
             imageGetter={getImageURL}
-            addReview={addEventReview}
-            getReviews={getEventReviews} />}
+            addEventReviews={addEventReviews}
+            reviews = {eventReviews}
+            getEventReviews={getEventReviews} />}
         />
 
 

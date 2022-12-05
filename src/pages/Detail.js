@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
+import {Reviews} from "../components/Reviews"
 
 
 export function Detail(props) {
@@ -18,18 +19,30 @@ export function Detail(props) {
 
           let reviews = props.getReviews(eventID)
           setEventReviews(reviews)
-          // get the image
-          // props.imageGetter('eventPicture/' + data.event_poster)
-          // .then((url)=> setImage(url) )
-          // .catch((error)=> console.log(error) )
         })
     }
-  })
-  const reviewSubmitHandler = (happen) =>{
-    happen.preventDefault()
-    const data = new FormData (happen.target)
-    props.addReview ( data.get("eventId"), data.get("reviewtext"), data.get("usewrId") )
+   })
+
+ //fetch book reviews
+//  useEffect(() => {
+//     if(eventReviews.length == 0) {
+//       props.getReviews( eventID )
+//     }
+//   }, [eventData])
+
+//   // set book review from props
+//   useEffect(() => {//
+//     setEventReviews(props.reviews)
+//   }, [props.reviews])
+
+  const reviewSubmitHandler = (evento) =>{
+    evento.preventDefault()
+    const data = new FormData (evento.target)
+    props.addReview ( data.get("eventId"), data.get("reviewtext"), data.get("userId") )
+    .then ((res) => console.log(res))
   }
+
+
   if (eventData) {
     return (
         <div className="container my-4">
@@ -72,6 +85,7 @@ export function Detail(props) {
                             <button className="btn btn-info my-2">Review this event</button>
                         </form>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -106,8 +120,7 @@ function DetailImage(props) {
          <span class="sr-only"></span>
        </div>
       ) 
-}
-}
+ }
 
-
+}
 
