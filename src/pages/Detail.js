@@ -80,7 +80,7 @@ export function Detail(props) {
                                 className="form-control"
                                 placeholder="I love this event!..."
                             ></textarea>
-                            <input type="hidden" name="userId" value={props.auth.uid} />
+                            <input type="hidden" name="userId" value={(props.auth) ? props.auth.uid : ""} />
                             <input type="hidden" name="eventId" value={eventID} />
                             <button className="btn btn-info my-2">Review this event</button>
                         </form>

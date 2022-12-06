@@ -3,7 +3,7 @@ import { useNavigate, Link } from "react-router-dom"
 import PhotoLio from '../lionel.JPG'
 import Logo from '../WhiteLogo-01.png'
 
-  
+
 
 
 export function MyAccount(props) {
@@ -14,22 +14,6 @@ export function MyAccount(props) {
             props.handler().then((res) => navigate('/'))
         }
     }, [props.auth])
-
-
-
-
-
-    // const MyFavourite = () => {
-    //     useEffect(() => {
-    //         document.event_title = 'events';
-    //     });
-    //     return (
-    //         <div>
-    //             <p>These are my events...</p>
-    //         </div>
-    //     );
-    // };
-    // export default MyFavourite;
 
     return (
 
@@ -46,6 +30,7 @@ export function MyAccount(props) {
                         </div>
                     </div>
                     <h1>Lionel Coevoet</h1>
+
                     <div class="container">
                         <div class="row">
                             <div class="col-sm">
@@ -53,65 +38,69 @@ export function MyAccount(props) {
                             </div>
                             <div class="col-sm">
                                 <div class="row">
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="Lionel" aria-label="First name"></input>
+
+                                    <div class="d-grid gap-2">
+                                        <div class="p-2 bg-dark border">Firstname
+                                            <input type="text" class="form-control" placeholder="Lionel" aria-label="First name"></input>
+                                        </div>
                                     </div>
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="Coevoet" aria-label="Last name"></input>
+                                    <div class="d-grid gap-2">
+                                        <div class="p-2 bg-dark border">Lastname
+                                            <input type="text" class="form-control" placeholder="Coevoet" aria-label="Last name"></input>
+                                        </div>
                                     </div>
+
                                 </div>
                                 <div class="row">
-
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="Student" aria-label="Occupation"></input>
+                                    <div class="d-grid gap-2">
+                                        <div class="p-2 bg-dark border">Occupation
+                                            <input type="text" class="form-control" placeholder="Student" aria-label="Occupation"></input>
+                                        </div>
                                     </div>
-                                    <div class="col-sm">
-                                        <input type="text" class="form-control" placeholder="11/01/1985" aria-label="Dob"></input>
+                                    <div class="d-grid gap-2">
+                                        <div class="p-2 bg-dark border">Date of Birth
+                                            <input type="text" class="form-control" placeholder="11/01/1985" aria-label="Dob"></input>
+                                        </div>
                                     </div>
-
                                 </div>
-
-
                             </div>
                             <div class="col-sm">
-
-                                <div class="col-sm">
-                                    <input type="text" class="form-control" placeholder="nionems@icloud.com" aria-label="email"></input>
+                                <div class="d-grid gap-2">
+                                    <div class="p-2 bg-dark border">Email
+                                        <input type="text" class="form-control" placeholder="nionems@icloud.com" aria-label="email"></input>
+                                    </div>
                                 </div>
-
-                                <div class="col-sm">
-                                    <input type="text" class="form-control" placeholder="********" aria-label="Password"></input>
+                                <div class="d-grid gap-2">
+                                    <div class="p-2 bg-dark border">Password
+                                        <input type="text" class="form-control" placeholder="********" aria-label="Password"></input>
+                                    </div>
                                 </div>
-
-
-
+                                <div class="d-grid gap-2">
+                                    <div class="p-2 bg-dark border">Re-enter Password
+                                        <input type="text" class="form-control" placeholder="********" aria-label="Password"></input>
+                                    </div>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <div class="p-2 bg-dark border">Prefered music Style
+                                        <input type="text" class="form-control" placeholder="Bachata" aria-label="Style"></input>
+                                    </div>
+                                </div>
                             </div>  <div class="col-3 col-md-3"><img className='logo' src={Logo} /></div>
-
-
-
                         </div>
                     </div>
-
-                    <div class="col-3">
+                    
+                    <div class="col-3 gap-3">
                         <label for="formFile" class="form-label">Edit Picture</label>
                         <input class="form-control" type="file" id="formFile"></input>
 
-
                     </div>
-
-                    <button type="button" class="btn btn-danger">Cancel</button>
-                    <button type="button" class="btn btn-danger">Edit Profile</button>
-
-
-
+                    <div class="d-grid gap-3">
+                        <button class="btn btn-danger" type="button">Cancel</button>
+                        <button class="btn btn-danger" type="button">Save</button>
+                    </div>
                 </div>
-
-
             </div>
-
-
             <h6></h6>
-
         </div>
 
 
@@ -120,14 +109,3 @@ export function MyAccount(props) {
     )
 }
 
-// {/* <div class="mb-3 row">
-// <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-// <div class="col-sm-10">
-//     <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
-// </div>
-// </div>
-
-// <label for="inputPassword" class="col-sm-2 col-form-label bg-light">Password</label>
-// <div class="col-sm-20">
-//     <input type="password" class="form-control" id="inputPassword"></input>
-// </div> */}
