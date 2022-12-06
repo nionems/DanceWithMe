@@ -106,7 +106,7 @@ function App() {
             profileImg: "default.png"
           }
           await setDoc(doc(FBdb, "users", uid), userObj)
-          userData(userObj)
+          setUserData(userObj)
           resolve(userCredential.user)
         })
         .catch((error) => {

@@ -52,7 +52,7 @@ export function Signin(props) {
               type="password"
               id="userpw"
               name="userpw"
-              placeholder="you@domain.com"
+              placeholder="********"
               className="form-control"
               onChange={(event) => setPassword(event.target.value)}
             />

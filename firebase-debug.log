@@ -1,0 +1,46 @@
+[debug] [2022-12-06T01:04:39.459Z] ----------------------------------------------------------------------
+[debug] [2022-12-06T01:04:39.461Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2022-12-06T01:04:39.461Z] CLI Version:   11.15.0
+[debug] [2022-12-06T01:04:39.461Z] Platform:      darwin
+[debug] [2022-12-06T01:04:39.462Z] Node Version:  v16.17.1
+[debug] [2022-12-06T01:04:39.463Z] Time:          Tue Dec 06 2022 12:04:39 GMT+1100 (Australian Eastern Daylight Time)
+[debug] [2022-12-06T01:04:39.463Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-06T01:04:39.532Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-06T01:04:39.532Z] > authorizing via signed-in user (9072@ait.nsw.edu.au)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[warn] ⚠  hub: emulator hub unable to start on port 4400, starting on 4402 instead. {"metadata":{"emulator":{"name":"hub"},"message":"emulator hub unable to start on port 4400, starting on 4402 instead."}}
+[warn] ⚠  logging: Logging Emulator unable to start on port 4500, starting on 4502 instead. {"metadata":{"emulator":{"name":"logging"},"message":"Logging Emulator unable to start on port 4500, starting on 4502 instead."}}
+[debug] [2022-12-06T01:04:40.496Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] ⚠  hosting: Hosting Emulator unable to start on port 5000, starting on 5004 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5004 instead."}}
+[debug] [2022-12-06T01:04:40.497Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2022-12-06T01:04:40.497Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4402},{"address":"::1","family":"IPv6","port":4402}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4502}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5004}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[warn] ⚠  emulators: It seems that you are running multiple instances of the emulator suite for project dancesydney-bd160. This may result in unexpected behavior. 
+[debug] [2022-12-06T01:04:40.506Z] [hub] writing locator at /var/folders/46/z6tz46dj60l5zkfl8nb3964m0000gn/T/hub-dancesydney-bd160.json
+[debug] [2022-12-06T01:04:40.530Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/dancesydney-bd160/sites 
+[debug] [2022-12-06T01:04:41.821Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/dancesydney-bd160/sites 200
+[debug] [2022-12-06T01:04:41.821Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/dancesydney-bd160/sites {"sites":[{"name":"projects/dancesydney-bd160/sites/dancesydney-bd160","defaultUrl":"https://dancesydney-bd160.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2022-12-06T01:04:41.822Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160/webApps/-/config [none]
+[debug] [2022-12-06T01:04:43.247Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160/webApps/-/config 200
+[debug] [2022-12-06T01:04:43.247Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160/webApps/-/config {"projectId":"dancesydney-bd160","appId":"1:666508917374:web:944e274ce513e4f60ff62f","storageBucket":"dancesydney-bd160.appspot.com","locationId":"australia-southeast1","apiKey":"AIzaSyC26eAaIFXycHgLgm2kPfHiXYtMGIHJmWY","authDomain":"dancesydney-bd160.firebaseapp.com","messagingSenderId":"666508917374","measurementId":"G-HYBQF8PJ0F"}
+[debug] [2022-12-06T01:04:43.272Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160 [none]
+[debug] [2022-12-06T01:04:44.058Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160 200
+[debug] [2022-12-06T01:04:44.059Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/dancesydney-bd160 {"projectId":"dancesydney-bd160","projectNumber":"666508917374","displayName":"DanceSydney","name":"projects/dancesydney-bd160","resources":{"hostingSite":"dancesydney-bd160","storageBucket":"dancesydney-bd160.appspot.com","locationId":"australia-southeast1"},"state":"ACTIVE","etag":"1_03ddfe6e-1a9c-45e1-8dc8-d95eba196139"}
+[info] i  hosting[dancesydney-bd160]: Serving hosting files from: y {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1my\u001b[22m"}}
+[info] ✔  hosting[dancesydney-bd160]: Local server: http://127.0.0.1:5004 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5004\u001b[22m\u001b[24m"}}
+[warn] ⚠  emulators: The Emulator UI is not starting, either because none of the emulated products have an interaction layer in Emulator UI or it cannot determine the Project ID. Pass the --project flag to specify a project. {"metadata":{"emulator":{"name":"hub"},"message":"The Emulator UI is not starting, either because none of the emulated products have an interaction layer in Emulator UI or it cannot determine the Project ID. Pass the --project flag to specify a project."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+└─────────────────────────────────────────────────────────────┘
+
+┌──────────┬────────────────┐
+│ Emulator │ Host:Port      │
+├──────────┼────────────────┤
+│ Hosting  │ 127.0.0.1:5004 │
+└──────────┴────────────────┘
+  Emulator Hub running at 127.0.0.1:4402
+  Other reserved ports: 4502
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
