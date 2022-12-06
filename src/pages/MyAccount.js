@@ -3,9 +3,6 @@ import { useNavigate, Link } from "react-router-dom"
 import PhotoLio from '../lionel.JPG'
 import Logo from '../WhiteLogo-01.png'
 
-
-
-
 export function MyAccount(props) {
     const navigate = useNavigate()
 
@@ -88,12 +85,12 @@ export function MyAccount(props) {
                             </div>  <div class="col-3 col-md-3"><img className='logo' src={Logo} /></div>
                         </div>
                     </div>
-                    
-                    <div class="col-3 gap-3">
+                    <div class="col-3 gap-1">
                         <label for="formFile" class="form-label">Edit Picture</label>
                         <input class="form-control" type="file" id="formFile"></input>
-
                     </div>
+                    <div class="p-2 bg-dark" style={{ color: "black" }}>_</div>
+                
                     <div class="d-grid gap-3">
                         <button class="btn btn-danger" type="button">Cancel</button>
                         <button class="btn btn-danger" type="button">Save</button>
