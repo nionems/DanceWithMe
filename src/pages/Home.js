@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import './Home.css';
 
 export function Home(props) {
   const [pageData, setPageData] = useState([])
@@ -18,11 +20,11 @@ export function Home(props) {
           <Image urlgetter={props.imageGetter} imgPath={"eventPicture/" + item.event_poster} />
           <div className="card">
             <div className="card-body text-center bg-secondary">
-              <h3 style={{ color: "black" }} className="card-title">{item.event_title}</h3>
-              <h5 style={{ color: "black" }} className="card-title">{item.event_day}</h5>
-              <h6 style={{ color: "black" }} className="card-title">{item.event_starttime}</h6>
-              <h3 style={{ color: "gold" }} className="card-title">{item.event_price}</h3>
-              <Link to={"/events/" + item.id} >Detail</Link>
+              <h3 style={{ color: "black" }} className="card-event-title">{item.event_title}</h3>
+              <h5 style={{ color: "black" }} className="card-event-day">{item.event_day}</h5>
+              <h6 style={{ color: "black" }} className="card-event-starttime">{item.event_starttime}</h6>
+              <h3 style={{ color: "gold" }} className="card-event-price">{item.event_price}</h3>
+              <Link to={"/events/" + item.id} >Details</Link>
             </div>
           </div>
         </div>

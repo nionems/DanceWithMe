@@ -1,0 +1,42 @@
+.card{
+    background-color: #000000;
+    font-size: large;
+}
+
+/*background of the cards*/
+.card-body{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #000000 !important;
+}
+
+
+/*back of posters*/
+.col-md-3{
+padding-top: 2vh;
+padding-bottom: 2vh;
+padding-left: 2vh;
+padding-right: 2vh;
+}
+
+
+
+.card-event-title{
+color: #FF003D !important;
+font-weight: bold;
+}
+
+.card-event-day{
+font-weight: bold;
+color: white !important;
+}
+
+.card-event-starttime{
+font-weight: bold;
+color: white !important;
+}
+
+
+.card-event-price{
+    color: #FF003D !important;
+    font-weight: bold;
+}

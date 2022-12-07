@@ -2,6 +2,8 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect } from "react"
 import { Link } from 'react-router-dom'
 import {Reviews} from "../components/Reviews"
+import 'bootstrap/dist/css/bootstrap.css';
+import './Detail.css';
 
 
 export function Detail(props) {
@@ -48,8 +50,7 @@ export function Detail(props) {
         <div className="container my-4">
             <div className="row">
                 <div className="col">
-                    <h2>{eventData.event_title}</h2>
-                    <h4>{eventData.event_genre}</h4>
+                    <h2 class="title-heading">{eventData.event_title} | {eventData.event_genre}</h2>
                 </div>
             </div>
             <div className="row">
@@ -57,15 +58,15 @@ export function Detail(props) {
                     <DetailImage data={eventData} getter={props.imageGetter} />
                 </div>
                 <div className="col">
-                    <h4>Title</h4>
+                    <h4 class="title">Title</h4>
                     <p>{eventData.event_title}</p>
-                    <h5>Genre</h5>
+                    <h5 class="genre">Genre</h5>
                     <p>{eventData.event_genre}</p>
-                    <h5>start</h5>
+                    <h5 class="start">Start</h5>
                     <p>{eventData.event_starttime}</p>
-                    <h5>end</h5>
-                    <p>{eventData.evet_endtime}</p>
-                    <h5>description</h5>
+                    <h5 class="end">End</h5>
+                    <p>{eventData.event_endtime}</p>
+                    <h5 class="desc">Description</h5>
                     <p>{eventData.event_description}</p>
                     <div style={(props.auth) ? { display: "block" } : { display: "none" }}>
                         <button className="btn btn-info">Add to Favourites</button>
@@ -123,4 +124,3 @@ function DetailImage(props) {
  }
 
 }
-

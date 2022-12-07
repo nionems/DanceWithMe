@@ -1,0 +1,19 @@
+.contact-us-heading{
+    padding-top: 7vh;
+    font-family: 'Courier New', Courier, monospace;
+    color: #FF003D !important;
+    font-weight: bold;
+    background-color: black !important;
+}
+
+.App{
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-weight: bold;
+}
+
+.container{
+    background-color: black; 
+    padding-bottom: 5vh;
+    padding-top: 5vh;
+}

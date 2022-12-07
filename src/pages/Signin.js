@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.css';
+import './Signin.css';
 
 export function Signin(props) {
   const [email, setEmail] = useState('')
@@ -33,9 +35,9 @@ export function Signin(props) {
       <div className="row">
 
         <form className="col-md-4 offset-md-4" onSubmit={submitHandler} >
-          <h2 style={{ color: "white" }} >Please Sign in to your account</h2>
+          <h2 class="signin-title" style={{ color: "white" }} >Please sign in to your account.</h2>
           <div className="mb-3">
-            <label htmlFor="useremail">Email </label>
+            <label htmlFor="useremail">Email:</label>
             <input
               type="email"
               id="useremail"
@@ -47,7 +49,7 @@ export function Signin(props) {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="userpw">Password</label>
+            <label htmlFor="userpw">Password:</label>
             <input
               type="password"
               id="userpw"

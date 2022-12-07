@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import './Signup.css';
 
 export function Signup(props) {
   const [email, setEmail] = useState('')
@@ -86,9 +88,9 @@ export function Signup(props) {
     <div className="container">
       <div className="row">
         <form className="col-md-4 offset-md-4" onSubmit={submitHandler}>
-          <h2 style={{ color: "white" }}>Sign up for an account</h2>
+          <h2 class="signup-title" style={{ color: "white" }}>Sign up for an account today.</h2>
           <div className="mb-3">
-            < label htmlFor="useremail">Email (valid email address) </label>
+            < label htmlFor="useremail">Please enter a valid email address:</label>
             <input
               type="email"
               id="useremail"

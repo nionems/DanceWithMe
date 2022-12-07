@@ -1,0 +1,34 @@
+.title-heading{
+    font-weight: bold;
+    font-size: 30pt;
+}
+
+.title{
+    color: #FF003D !important;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.genre{
+    color: #FF003D !important;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.start{
+    color: #FF003D !important;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.end{
+    color: #FF003D !important;
+    font-weight: bold;
+    font-size: 20pt;
+}
+
+.desc{
+    color: #FF003D !important;
+    font-weight: bold;
+    font-size: 20pt;
+}
