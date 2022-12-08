@@ -13,8 +13,8 @@ export function Reviews(props) {
         </div>
     }
     else {
-        const ReviewsCollection = reviews.map( (item) => {
-            return(
+        const ReviewsCollection = reviews.map((item) => {
+            return (
                 <div className="my-3">
                     <p>{item.Date}</p>
                     <p>{item.Text}</p>

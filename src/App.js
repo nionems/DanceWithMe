@@ -6,6 +6,7 @@ import './App.css';
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import { Routes, Route } from 'react-router-dom';
+
 // import page components
 import { Home } from './pages/Home'
 import { Contact } from './pages/Contact'
@@ -16,7 +17,6 @@ import { Signin } from './pages/Signin'
 import { MyAccount } from './pages/MyAccount'
 import { MyList } from './pages/MyList'
 import { Detail } from './pages/Detail'
-
 
 // import firebase
 import { initializeApp } from "firebase/app"
@@ -35,6 +35,7 @@ import {
   onSnapshot,
   where
 } from "firebase/firestore";
+
 // import firebase auth
 import {
   getAuth,
@@ -161,7 +162,6 @@ function App() {
 
   }
 
-
   // an observer to determine user's authentication status
   onAuthStateChanged(FBauth, (user) => {
     if (user) {
@@ -213,7 +213,7 @@ function App() {
   }
   const addEventReviews = async (eventID, reviewText, userId) => {
     const path = "events/" + eventID + "/events"
-    const reviewObj = { EventID: eventID, UserId: userId, Text: reviewText, Date:new Date() }
+    const reviewObj = { EventID: eventID, UserId: userId, Text: reviewText, Date: new Date() }
     const reviewRef = await addDoc(collection(FBdb, path), reviewObj)
     if (reviewRef.id) {
       return true
@@ -245,11 +245,9 @@ function App() {
 
         reviews.push(review.data())
       })
-      setEventReviews (reviews)
+      setEventReviews(reviews)
     })
   }
-
-
 
   return (
     <div className="App text-white">
@@ -269,12 +267,9 @@ function App() {
             auth={auth}
             imageGetter={getImageURL}
             addEventReviews={addEventReviews}
-            reviews = {eventReviews}
+            reviews={eventReviews}
             getEventReviews={getEventReviews} />}
         />
-
-
-
       </Routes>
       <Footer year="2022" />
     </div>

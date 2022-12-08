@@ -1,12 +1,12 @@
 .card{
-    background-color: #000000;
+    background-color: rgba(0,0,0,.5);
     font-size: large;
 }
 
 /*background of the cards*/
 .card-body{
     font-family: 'Courier New', Courier, monospace;
-    background-color: #000000 !important;
+    background-color:  rgba(0,0,0,.2)  !important;
 }
 
 

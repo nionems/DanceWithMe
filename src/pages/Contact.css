@@ -3,17 +3,18 @@
     font-family: 'Courier New', Courier, monospace;
     color: #FF003D !important;
     font-weight: bold;
-    background-color: black !important;
+    background-color: rgba(0,0,0,.5) !important;
 }
 
 .App{
     font-family: 'Courier New', Courier, monospace;
     color: white;
     font-weight: bold;
+    background-color: rgba(0,0,0,.5); 
 }
 
 .container{
-    background-color: black; 
+    background-color: rgba(0,0,0,.5); 
     padding-bottom: 5vh;
     padding-top: 5vh;
 }

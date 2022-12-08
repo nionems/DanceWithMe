@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.css';
+import './Navigation.css';
 
 export function Navigation(props) {
     const [navItems, setNavItems] = useState([])

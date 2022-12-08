@@ -1,0 +1,12 @@
+.container-fluid{
+font-family: 'Courier New', Courier, monospace;
+text-align: center;
+}
+
+.col-6{
+display: flex;
+justify-content: center;
+width: auto;
+padding-bottom: 2vh;
+padding-top: 2vh;
+}

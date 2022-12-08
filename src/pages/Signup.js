@@ -38,8 +38,8 @@ export function Signup(props) {
   }, [password])
 
   useEffect(() => {
-    if(dob.length >= 8) {
-      setValidDob( true )
+    if (dob.length >= 8) {
+      setValidDob(true)
     }
     else {
       setValidDob(false)
@@ -47,8 +47,8 @@ export function Signup(props) {
   }, [dob])
 
   useEffect(() => {
-    if(occupation.length >= 4) {
-      setValidOccupation( true )
+    if (occupation.length >= 4) {
+      setValidOccupation(true)
     }
     else {
       setValidOccupation(false)
@@ -156,6 +156,4 @@ export function Signup(props) {
       </div>
     </div>
   )
-
-
 }

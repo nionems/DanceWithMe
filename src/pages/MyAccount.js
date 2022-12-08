@@ -27,7 +27,6 @@ export function MyAccount(props) {
                         </div>
                     </div>
                     <h1>Lionel Coevoet</h1>
-
                     <div class="container">
                         <div class="row">
                             <div class="col-sm">
@@ -90,7 +89,6 @@ export function MyAccount(props) {
                         <input class="form-control" type="file" id="formFile"></input>
                     </div>
                     <div class="p-2 bg-dark" style={{ color: "black" }}>_</div>
-                
                     <div class="d-grid gap-3">
                         <button class="btn btn-danger" type="button">Cancel</button>
                         <button class="btn btn-danger" type="button">Save</button>

@@ -2,7 +2,7 @@ import { ContactForm } from '../components/ContactForm'
 import 'bootstrap/dist/css/bootstrap.css';
 import './Contact.css';
 
-export function Contact( props ) {
+export function Contact(props) {
     return (
 
         <div className="Contact">

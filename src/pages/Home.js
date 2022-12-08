@@ -6,12 +6,9 @@ import './Home.css';
 export function Home(props) {
   const [pageData, setPageData] = useState([])
 
-
   useEffect(() => {
     setPageData(props.listData)
   }, [props.listData])
-
-
 
   if (pageData.length > 0) {
     const itemCollection = pageData.map((item, key) => {
